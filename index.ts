@@ -1,64 +1,35 @@
-// Define Employee type
-type Employee  = {
+// type Colour
+type Colour = "Red" | "Blue" | "Green";
+// type product
+type Product = {
     name: string,
-    department: string,
-    role: string,
-}
-// Create employee data
-let employee: Employee = {
-    name: "Azka",
-    department: "IT",
-    role: "Developer",
-
+    price: number,
+    colour?: string,
+    inventory:{
+        stock: number,
+        colorOptions?: Colour[],
+        changeColour(newColour: Colour):
+        void;
+    };
 };
-// print Information
-console.log(employee);
-console.log(employee.name,employee.department,employee.role);
-//Include an optional nested object named contact to hold phone and email information (if 
-//provided).
-type contact = {
-    phone: Number;
-    email: string;
-}
-type Employee2 = {
-    name: string,
-    department: string,
-    role: string,
-    contact?: contact,
-};
-let employee2: Employee2 = {
-    name: "Azka",
-    department: "IT",
-    role: "Developer",
-    contact: {
-        phone: 812345678,
-        email: "azka@gmail.com",
-    }
-};
-console.log(employee2);
-console.log(employee2.contact?.phone);
-type Role = "Doctor" | "Engineer" | "Teacher";
-type Emp = {
-    name: string,
-    department: string,
-    role: Role,
-
-}
-let emp: Emp = {
-    name: "Hateen",
-    department: "Heart Specialist",
-    role: "Doctor",
-};
-let emp2: Emp = {
-    name: "Ahmad",
-    department: "Chemical Enigineer",
-    role: "Engineer",
-};
-let emp3: Emp = {
-    name: "Sumera Mughees",
-    department: "Senior",
-    role: "Teacher",
-};
-console.log(emp);
-console.log(emp2);
-console.log(emp3);
+const tShirt: Product =
+{
+    name: "T-Shirt",
+    price: 20,
+    colour: "Red",
+    inventory: {
+        stock: 20,
+        colorOptions: ["Red", "Blue","Green"],
+        changeColour(newColour: Colour) {
+            this.colour = newColour;
+            if(newColour === "Red"){
+                this.price += this.price * 0.1;
+            }
+            else if(newColour === "Blue"){
+                this.price += this.price * 0.05;
+            }
+        },
+    },
+    };  
+tShirt.inventory.changeColour("Blue");
+console.log(tShirt);
