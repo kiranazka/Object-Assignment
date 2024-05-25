@@ -1,32 +1,39 @@
-// Design a type alias named Car to represent a car object.
-var myCar = {
-    name: "BMW",
-    modulNo: 123,
-    year: 2022,
-    colour: "red",
+var _a;
+// Create employee data
+var employee = {
+    name: "Azka",
+    department: "IT",
+    role: "Developer",
 };
-console.log(myCar);
-var car2 = {
-    make: "Toyota",
-    model: "Camry",
-    year: 2022,
-    color: "blue",
-    engine: {
-        horsepower: 200,
-    },
+// print Information
+console.log(employee);
+console.log(employee.name, employee.department, employee.role);
+var employee2 = {
+    name: "Azka",
+    department: "IT",
+    role: "Developer",
+    contact: {
+        phone: 812345678,
+        email: "azka@gmail.com",
+    }
 };
-console.log(car2);
-// Function to engine's horsepower
-function getHorsepower(car) {
-    return car.engine.horsepower;
-}
-var thecar = {
-    make: "Toyota",
-    model: "Camry",
-    year: 2022,
-    color: "blue",
-    engine: {
-        horsepower: 200,
-    },
+console.log(employee2);
+console.log((_a = employee2.contact) === null || _a === void 0 ? void 0 : _a.phone);
+var emp = {
+    name: "Hateen",
+    department: "Heart Specialist",
+    role: "Doctor",
 };
-console.log(getHorsepower(thecar));
+var emp2 = {
+    name: "Ahmad",
+    department: "Chemical Enigineer",
+    role: "Engineer",
+};
+var emp3 = {
+    name: "Sumera Mughees",
+    department: "Senior",
+    role: "Teacher",
+};
+console.log(emp);
+console.log(emp2);
+console.log(emp3);

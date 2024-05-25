@@ -1,63 +1,64 @@
-// Design a type alias named Car to represent a car object.
+// Define Employee type
+type Employee  = {
+    name: string,
+    department: string,
+    role: string,
+}
+// Create employee data
+let employee: Employee = {
+    name: "Azka",
+    department: "IT",
+    role: "Developer",
 
-type Car = {
-    name: string;
-    modulNo: number;
-    year: number;
-    colour: string;
+};
+// print Information
+console.log(employee);
+console.log(employee.name,employee.department,employee.role);
+//Include an optional nested object named contact to hold phone and email information (if 
+//provided).
+type contact = {
+    phone: Number;
+    email: string;
+}
+type Employee2 = {
+    name: string,
+    department: string,
+    role: string,
+    contact?: contact,
+};
+let employee2: Employee2 = {
+    name: "Azka",
+    department: "IT",
+    role: "Developer",
+    contact: {
+        phone: 812345678,
+        email: "azka@gmail.com",
+    }
+};
+console.log(employee2);
+console.log(employee2.contact?.phone);
+type Role = "Doctor" | "Engineer" | "Teacher";
+type Emp = {
+    name: string,
+    department: string,
+    role: Role,
 
 }
-let myCar: Car= {
-    name: "BMW",
-    modulNo: 123,
-    year: 2022,
-    colour: "red",
+let emp: Emp = {
+    name: "Hateen",
+    department: "Heart Specialist",
+    role: "Doctor",
 };
-console.log(myCar);
-//Include a nested object named engine within Car, containing a property named horsepower (number)
-type Car2 = {
-    make: string;
-    model: string;
-    year: number;
-    color: string;
-    engine: {
-      horsepower: number;
-    };
-  };
-
-let car2: Car2 = {
-    make: "Toyota",
-    model: "Camry",
-    year: 2022,
-    color: "blue",
-    engine: {
-      horsepower: 200,
-    },
-  };
-console.log(car2);
-
-//3. Define a function named getHorsepower directly within the Car type alias to retrieve the engine's horsepower.
-type theCar = {
-    make: string;
-    model: string;
-    year: number;
-    color: string;
-    engine: {
-      horsepower: number;
-    };
-  };
-   // Function to engine's horsepower
-   function getHorsepower(car: theCar) {
-    return car.engine.horsepower;
-  }
-   let thecar:theCar={
-    make: "Toyota",
-    model: "Camry",
-    year: 2022,
-    color: "blue",
-    engine: {
-      horsepower: 200,
-    },
-
-   }
-   console.log(getHorsepower(thecar));
+let emp2: Emp = {
+    name: "Ahmad",
+    department: "Chemical Enigineer",
+    role: "Engineer",
+};
+let emp3: Emp = {
+    name: "Sumera Mughees",
+    department: "Senior",
+    role: "Teacher",
+};
+console.log(emp);
+console.log(emp2);
+console.log(emp3);
